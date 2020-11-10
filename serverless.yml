@@ -1,0 +1,16 @@
+service: serverless-graphql-api-boilerplate
+provider:
+  name: aws
+  runtime: nodejs12.x
+  versionFunctions: false
+functions:
+  graphql:
+    handler: build/graphql.handler
+    events:
+      - http:
+          path: graphql
+          method: any
+          cors: true
+
+plugins:
+  - serverless-offline
