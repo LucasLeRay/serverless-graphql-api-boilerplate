@@ -3,6 +3,22 @@ provider:
   name: aws
   runtime: nodejs12.x
   versionFunctions: false
+  region: us-east-1
+  environment:
+    ITEM_TABLE: ${self:service}-items-${self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: 'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.ITEM_TABLE}'
+  apiGateway:
+    shouldStartNameWithService: true
+
 functions:
   graphql:
     handler: build/graphql.handler

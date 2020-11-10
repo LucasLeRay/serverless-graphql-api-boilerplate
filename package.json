@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "tsc",
-    "start": "AWS_PROFILE=perso sls offline --port 3001",
+    "start": "sls offline --port 3001",
     "deploy": "npm run build && serverless deploy"
   },
   "dependencies": {
