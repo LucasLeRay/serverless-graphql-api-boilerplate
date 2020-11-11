@@ -105,3 +105,6 @@ dist
 
 # built files
 build
+
+# editor configuration
+.vscode

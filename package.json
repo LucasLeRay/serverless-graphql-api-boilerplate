@@ -1,7 +1,14 @@
 {
+  "name": "serverless-graphql-api-boilerplate",
+  "version": "1.0.0",
+  "description": "A Serverless API boilerplate using AWS Lambda, GraphQL and Typescript",
+  "main": "src/graphql.ts",
+  "repository": "https://github.com/LucasLeRay/serverless-graphql-api-boilerplate",
+  "author": "Lucas LE RAY <lucas.a.leray@gmail.com> (https://lucas-le-ray.com)",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "start": "sls offline --port 3001",
+    "start": "sls offline",
     "deploy": "npm run build && serverless deploy"
   },
   "dependencies": {
@@ -11,6 +18,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
+    "aws-sdk": "^2.789.0",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",

@@ -1,16 +1,9 @@
-import { ApolloServer, gql } from 'apollo-server-lambda'
+import fs from 'fs'
+import { ApolloServer } from 'apollo-server-lambda'
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
+import resolvers from './resolvers'
 
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-  },
-}
+const typeDefs = fs.readFileSync('./src/schema.graphql', 'utf8')
 
 const server = new ApolloServer({
   typeDefs,
