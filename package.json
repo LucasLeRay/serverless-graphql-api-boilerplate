@@ -7,15 +7,20 @@
   "author": "Lucas LE RAY <lucas.a.leray@gmail.com> (https://lucas-le-ray.com)",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "schema-type": "graphql-codegen --config codegen.yml",
+    "build": "npm run schema-type && tsc",
     "start": "sls offline",
     "deploy": "npm run build && serverless deploy"
   },
   "dependencies": {
     "apollo-server-lambda": "^2.19.0",
-    "graphql": "^15.4.0"
+    "graphql": "^15.4.0",
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "1.19.1",
+    "@graphql-codegen/typescript": "1.17.11",
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "aws-sdk": "^2.789.0",

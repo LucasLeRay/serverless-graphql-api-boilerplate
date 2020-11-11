@@ -3,12 +3,25 @@ type Query {
 }
 
 type Mutation {
-  createItem(content: String!): Item
-  updateItem(id: ID!, content: String!): Item
-  deleteItem(id: ID!): Item
+  createItem(input: CreateItemInput!): Item
+  updateItem(input: UpdateItemInput!): Item
+  deleteItem(input: DeleteItemInput!): Item
 }
 
 type Item {
   id: ID!
+  content: String
+}
+
+input CreateItemInput {
   content: String!
+}
+
+input UpdateItemInput {
+  id: ID!
+  content: String!
+}
+
+input DeleteItemInput {
+  id: ID!
 }
