@@ -1,4 +1,5 @@
-service: serverless-graphql-api-boilerplate
+service: serverless-api-example
+
 provider:
   name: aws
   runtime: nodejs12.x
