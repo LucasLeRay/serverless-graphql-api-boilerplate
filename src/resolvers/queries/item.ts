@@ -1,7 +1,7 @@
 import AWS from 'aws-sdk'
 import { Item } from '../../generated/schema'
 
-async function createItem(_: unknown, input: { id: string }): Promise<Item> {
+async function item(_: unknown, input: { id: string }): Promise<Item> {
   const dynamoDb = new AWS.DynamoDB.DocumentClient()
 
   const params = {
@@ -19,4 +19,4 @@ async function createItem(_: unknown, input: { id: string }): Promise<Item> {
   }
 }
 
-export default createItem
+export default item
